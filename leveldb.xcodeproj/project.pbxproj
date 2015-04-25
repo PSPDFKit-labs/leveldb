@@ -22,7 +22,6 @@
 		434B35F11AE84BA6009DC081 /* version_edit.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AAB1AE153C4005AD28E /* version_edit.cc */; };
 		434B35F21AE84BA6009DC081 /* version_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AAE1AE153C4005AD28E /* version_set.cc */; };
 		434B35F31AE84BA6009DC081 /* write_batch.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AB11AE153C4005AD28E /* write_batch.cc */; };
-		434B35F41AE84BAC009DC081 /* memenv.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AC01AE153C4005AD28E /* memenv.cc */; };
 		434B35F51AE84BB4009DC081 /* port_posix.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0ADD1AE153C4005AD28E /* port_posix.cc */; };
 		434B35F61AE84BCB009DC081 /* block_builder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AE71AE153C4005AD28E /* block_builder.cc */; };
 		434B35F71AE84BCB009DC081 /* block.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AE51AE153C4005AD28E /* block.cc */; };
@@ -61,7 +60,6 @@
 		435D0B331AE153C4005AD28E /* version_edit.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AAB1AE153C4005AD28E /* version_edit.cc */; };
 		435D0B351AE153C4005AD28E /* version_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AAE1AE153C4005AD28E /* version_set.cc */; };
 		435D0B371AE153C4005AD28E /* write_batch.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AB11AE153C4005AD28E /* write_batch.cc */; };
-		435D0B3B1AE153C4005AD28E /* memenv.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AC01AE153C4005AD28E /* memenv.cc */; };
 		435D0B401AE153C4005AD28E /* port_posix.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0ADD1AE153C4005AD28E /* port_posix.cc */; };
 		435D0B421AE153C4005AD28E /* block.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AE51AE153C4005AD28E /* block.cc */; };
 		435D0B431AE153C4005AD28E /* block_builder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0AE71AE153C4005AD28E /* block_builder.cc */; };
@@ -86,6 +84,7 @@
 		435D0B5F1AE153C4005AD28E /* logging.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0B101AE153C4005AD28E /* logging.cc */; };
 		435D0B601AE153C4005AD28E /* options.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0B131AE153C4005AD28E /* options.cc */; };
 		435D0B611AE153C4005AD28E /* status.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0B161AE153C4005AD28E /* status.cc */; };
+		4362EF881AE9A4F30096B454 /* env.cc in Sources */ = {isa = PBXBuildFile; fileRef = 435D0B071AE153C4005AD28E /* env.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,8 +132,6 @@
 		435D0AAF1AE153C4005AD28E /* version_set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version_set.h; sourceTree = "<group>"; };
 		435D0AB11AE153C4005AD28E /* write_batch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = write_batch.cc; sourceTree = "<group>"; };
 		435D0AB21AE153C4005AD28E /* write_batch_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = write_batch_internal.h; sourceTree = "<group>"; };
-		435D0AC01AE153C4005AD28E /* memenv.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memenv.cc; sourceTree = "<group>"; };
-		435D0AC11AE153C4005AD28E /* memenv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memenv.h; sourceTree = "<group>"; };
 		435D0AC51AE153C4005AD28E /* c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c.h; sourceTree = "<group>"; };
 		435D0AC61AE153C4005AD28E /* cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cache.h; sourceTree = "<group>"; };
 		435D0AC71AE153C4005AD28E /* comparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = comparator.h; sourceTree = "<group>"; };
@@ -218,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				435D0A871AE153C3005AD28E /* db */,
-				435D0ABE1AE153C4005AD28E /* helpers */,
 				435D0AC31AE153C4005AD28E /* include */,
 				435D0AD91AE153C4005AD28E /* port */,
 				435D0AE41AE153C4005AD28E /* table */,
@@ -271,23 +267,6 @@
 				435D0AB21AE153C4005AD28E /* write_batch_internal.h */,
 			);
 			path = db;
-			sourceTree = "<group>";
-		};
-		435D0ABE1AE153C4005AD28E /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-				435D0ABF1AE153C4005AD28E /* memenv */,
-			);
-			path = helpers;
-			sourceTree = "<group>";
-		};
-		435D0ABF1AE153C4005AD28E /* memenv */ = {
-			isa = PBXGroup;
-			children = (
-				435D0AC01AE153C4005AD28E /* memenv.cc */,
-				435D0AC11AE153C4005AD28E /* memenv.h */,
-			);
-			path = memenv;
 			sourceTree = "<group>";
 		};
 		435D0AC31AE153C4005AD28E /* include */ = {
@@ -472,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4362EF881AE9A4F30096B454 /* env.cc in Sources */,
 				434B35E91AE84BA6009DC081 /* dbformat.cc in Sources */,
 				434B35EA1AE84BA6009DC081 /* dumpfile.cc in Sources */,
 				434B35EB1AE84BA6009DC081 /* filename.cc in Sources */,
@@ -482,7 +462,6 @@
 				434B35FF1AE84BD7009DC081 /* arena.cc in Sources */,
 				434B35F71AE84BCB009DC081 /* block.cc in Sources */,
 				434B35E51AE84BA6009DC081 /* builder.cc in Sources */,
-				434B35F41AE84BAC009DC081 /* memenv.cc in Sources */,
 				434B36091AE84BD7009DC081 /* logging.cc in Sources */,
 				434B35F51AE84BB4009DC081 /* port_posix.cc in Sources */,
 				434B36031AE84BD7009DC081 /* comparator.cc in Sources */,
@@ -537,7 +516,6 @@
 				435D0B481AE153C4005AD28E /* merger.cc in Sources */,
 				435D0B351AE153C4005AD28E /* version_set.cc in Sources */,
 				435D0B291AE153C4005AD28E /* filename.cc in Sources */,
-				435D0B3B1AE153C4005AD28E /* memenv.cc in Sources */,
 				435D0B5B1AE153C4005AD28E /* filter_policy.cc in Sources */,
 				435D0B331AE153C4005AD28E /* version_edit.cc in Sources */,
 				435D0B2E1AE153C4005AD28E /* log_writer.cc in Sources */,
